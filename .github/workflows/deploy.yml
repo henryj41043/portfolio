@@ -1,0 +1,34 @@
+name: Deploy Angular to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Build Angular Application
+        run: ng build --configuration production --base-href=/${{ github.event.repository.name }}/
+
+      - name: Deploy to GitHub Pages
+        uses: angular-schule/angular-cli-ghpages@v2.0.0
+        with:
+          repo: ${{ github.repository }}
+          branch: gh-pages # The branch where your built app will be deployed
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          base_href: /${{ github.event.repository.name }}/
+          build_folder: dist/portfolio
