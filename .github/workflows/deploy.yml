@@ -22,10 +22,10 @@ jobs:
         run: npm install
 
       - name: Build Angular Application
-        run: ng build --configuration production --base-href=/${{ github.event.repository.name }}/
+        run: ng build --configuration production --base-href=/portfolio/
 
       - name: Deploy to GitHub Pages
-        uses: angular-schule/angular-cli-ghpages@v2.0.3
+        uses: angular-schule/angular-cli-ghpages@v2.0.0
         with:
           repo: ${{ github.repository }}
           branch: main
