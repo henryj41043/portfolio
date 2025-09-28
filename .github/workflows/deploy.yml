@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -18,17 +18,14 @@ jobs:
         with:
           node-version: '22'
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build Angular Application
-        run: ng build --configuration production --base-href=/portfolio/
+      - name: Build Angular application
+        run: ng build --configuration production --base-href /portfolio/
 
       - name: Deploy to GitHub Pages
-        uses: angular-schule/angular-cli-ghpages@v2.0.0
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          repo: ${{ github.repository }}
-          branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          base_href: /${{ github.event.repository.name }}/
-          build_folder: dist/portfolio
+          publish_dir: ./dist/portfolio
