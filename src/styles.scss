@@ -3,21 +3,18 @@
 html {
   color-scheme: light dark;
   @include mat.theme((
-  color: (
-    primary: mat.$azure-palette,
-    tertiary: mat.$blue-palette,
-  ),
-  typography: Roboto,
-  density: 0
+    color: mat.$azure-palette,
+    typography: Roboto,
+    density: 0
   ));
 }
 
-
-//html, body { height: 100%; }
-//body {
-//  margin: 0;
-//  font-family: Roboto, "Helvetica Neue", sans-serif;
-//  //background-color: var(--mat-app-background-color);
-//  //color: var(--mat-sys-on-surface);
-//  //font: var(--mat-sys-body-medium);
-//}
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+}
