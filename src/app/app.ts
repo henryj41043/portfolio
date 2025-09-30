@@ -9,5 +9,5 @@ import {Banner} from './banner/banner';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('portfolio');
+  protected readonly title = signal('Joshua D. Henry');
 }

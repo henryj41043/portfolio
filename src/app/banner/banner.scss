@@ -7,3 +7,13 @@
   color: var(--mat-sys-on-primary-container);
   border: 1px solid var(--mat-sys-outline-variant);
 }
+
+button {
+  background: var(--mat-sys-primary-container);
+  color: var(--mat-sys-on-primary-container) !important;
+}
+
+.subtitle {
+  font-size: small;
+  padding-left: 10px;
+}

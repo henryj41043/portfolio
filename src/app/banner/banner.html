@@ -1,8 +1,12 @@
 <mat-toolbar>
-<!--  <img src="" alt="Profile picture" width="300" height="300"/>-->
-  <span>Joshua D. Henry</span>
+  <span class="title-container">
+    Joshua D. Henry
+    <span class="subtitle">Full Stack Software Engineer</span>
+  </span>
   <span class="banner-spacer"></span>
-  <button matIconButton class="menu-icon" aria-label="Icon-button with menu icon">
-    <mat-icon fontIcon="menu"></mat-icon>
-  </button>
+  <button matButton [routerLink]="['/']">Home</button>
+  <button matButton [routerLink]="['/about']">About</button>
+  <button matButton>Resume</button>
+  <button matButton>Projects</button>
+  <button matButton>Contact</button>
 </mat-toolbar>
